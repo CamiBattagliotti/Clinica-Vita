@@ -7,7 +7,6 @@
 
     <!-- BOOTSTRAP CSS -->
     <link rel="stylesheet" href="css/bootstrap.min.css" />
-
     <link
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
@@ -16,314 +15,316 @@
   </head>
 
   <body>
-    <!-- ======================== NAV ======================== -->
-    <nav
-      class="navbar bg-light navbar-expand-lg sticky-top"
-      data-bs-theme="light"
-    >
-      <div class="container-fluid">
-        <!-- marca -->
-        <a
-          class="navbar-brand d-inline-flex align-items-center gap-2 m-0"
-          href="index.html"
-        >
-          <img src="img/logo.png" alt="Clínica Vita" class="logo-marca" />
-          <span class="d-none d-lg-inline fw-semibold text-primary"
-            >Clínica Vita</span
+    <div id="contenido" class="d-none">
+      <!-- Header -->
+      <header class="navbar bg-white border-bottom sticky-top">
+        <div class="container-fluid">
+          <a class="navbar-brand fw-semibold" href="admin-medicos.html"
+            >Clínica Vita · Admin</a
           >
-        </a>
 
-        <!-- título centrado en mobile -->
-        <h1
-          class="position-absolute top-50 start-50 translate-middle d-lg-none fs-5 m-0 fw-bold text-primary"
-        >
-          Clínica Vita
-        </h1>
-
-        <!-- botón hamburguesa -->
-        <button
-          class="navbar-toggler ms-auto d-lg-none"
-          type="button"
-          data-bs-toggle="offcanvas"
-          data-bs-target="#menuVita"
-        >
-          <span class="navbar-toggler-icon"></span>
-        </button>
-
-        <!-- menú en desktop -->
-        <ul
-          class="navbar-nav ms-auto d-none d-lg-flex align-items-lg-center gap-lg-3 m-0"
-        >
-          <li class="nav-item">
-            <a
-              class="nav-link text-primary"
-              href="index.html"
-              aria-current="page"
-              >Home</a
-            >
-          </li>
-          <li class="nav-item">
-            <a class="nav-link text-primary" href="institucional.html"
-              >Institucional</a
-            >
-          </li>
-          <li class="nav-item">
-            <a class="nav-link text-primary" href="contacto.html">Contacto</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link text-primary" href="faq.html">FAQ</a>
-          </li>
-          <li class="nav-item" id="btnCierre">
-            <button class="btn active btn-outline-danger ms-2 d-none">
-              Cerrar sesión
-            </button>
-          </li>
-        </ul>
-      </div>
-    </nav>
-
-    <!-- ======================== OFFCANVAS (mobile/tablet) ======================== -->
-
-    <div
-      class="offcanvas offcanvas-end d-lg-none"
-      tabindex="-1"
-      id="menuVita"
-      data-bs-scroll="true"
-    >
-      <div class="offcanvas-header border-bottom">
-        <h2 class="offcanvas-title fs-6 fw-bold m-0">Menú</h2>
-        <button
-          type="button"
-          class="btn-close"
-          data-bs-dismiss="offcanvas"
-        ></button>
-      </div>
-      <div class="offcanvas-body">
-        <ul class="navbar-nav">
-          <li class="nav-item">
-            <a
-              class="nav-link active fw-semibold text-success"
-              href="index.html"
-              aria-current="page"
-              >Home</a
-            >
-          </li>
-          <li class="nav-item">
-            <a class="nav-link text-primary" href="institucional.html"
-              >Institucional</a
-            >
-          </li>
-          <li class="nav-item">
-            <a class="nav-link text-primary" href="contacto.html">Contacto</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link text-primary" href="faq.html">FAQ</a>
-          </li>
-          <li id="adminMedMob" class="nav-item">
-            <a class="nav-link text-primary" href="admin-medicos.html"
-              >Administrador</a
-            >
-          </li>
-          <li class="nav-item d-flex justify-content-center d-none" id="btnInicioMob">
+          <!-- Acciones -->
+          <div class="ms-auto d-flex align-items-center gap-2">
             <button
-              class="btn btn-success"
-              data-bs-toggle="modal"
-              data-bs-target="#loginModal"
+              class="btn btn-outline-secondary btn-sm d-md-none"
+              type="button"
+              data-bs-toggle="offcanvas"
+              data-bs-target="#panelMobile"
+              aria-controls="panelMobile"
             >
-              Iniciar sesión
+              <i class="bi bi-list"></i> Panel
             </button>
-          </li>
-          <li
-            class="nav-item d-flex justify-content-center d-none"
-            id="btnCierreMob"
+
+            <!-- Botón de cierre (oculto) -->
+            <form action="/logout" method="post" class="m-0 d-none">
+              <button class="btn btn-outline-danger btn-sm">
+                <i class="bi bi-box-arrow-right me-1"></i> Cerrar sesión
+              </button>
+            </form>
+          </div>
+        </div>
+      </header>
+
+      <!-- Panel mobile (offcanvas) -->
+      <div
+        class="offcanvas offcanvas-start d-md-none"
+        tabindex="-1"
+        id="panelMobile"
+      >
+        <div class="offcanvas-header">
+          <h5 class="offcanvas-title">Panel</h5>
+          <button
+            type="button"
+            class="btn-close"
+            data-bs-dismiss="offcanvas"
+          ></button>
+        </div>
+        <div class="offcanvas-body">
+          <ul class="nav nav-pills flex-column gap-1">
+            <li class="nav-item">
+              <a class="nav-link active" href="admin-medicos.html">
+                <i class="bi bi-person-vcard me-2"></i>Médicos
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="admin-especialidades.html">
+                <i class="bi bi-hospital me-2"></i>Especialidades
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="admin-obras-sociales.html">
+                <i class="bi bi-shield-plus me-2"></i>Obras sociales
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="admin-turnos.html">
+                <i class="bi bi-calendar-check me-2"></i>Turnos y reservas
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="usuarios.html">
+                <i class="bi bi-people me-2"></i>Usuarios
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="index.html">
+                <i class="bi bi-box-arrow-up-right me-2"></i>Ver sitio
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Layout -->
+      <div class="container-fluid">
+        <div class="row">
+          <!-- Sidebar fija en desktop -->
+          <nav
+            class="col-12 col-md-3 col-lg-2 d-none d-md-block bg-white border-end p-0"
           >
-            <button class="btn btn-outline-danger ms-2 d-none">
-              Cerrar sesión
-            </button>
-          </li>
-        </ul>
-      </div>
-    </div>
-
-    <!-- ======================== FORMULARIO ======================== -->
-
-    <div class="container mt-5">
-      <h1 class="mb-4 text-center">Gestión de Profesionales Médicos 🩺</h1>
-      <hr />
-
-      <div class="card shadow mb-5">
-        <div class="card-header bg-primary text-white">
-          <h3 id="tituloFormulario">Agregar Nuevo Médico</h3>
-        </div>
-        <div class="card-body">
-          <form id="formMedico">
-            <input type="hidden" id="medicoId" value="" />
-
-            <div class="row g-3">
-              <div class="col-md-4">
-                <label for="matricula" class="form-label">Matrícula (MN-MP)</label>
-                <input
-                  type="text"
-                  class="form-control"
-                  id="matricula"
-                  required
-                />
-              </div>
-              <div class="col-md-4">
-                <label for="nombre" class="form-label">Nombre</label>
-                <input type="text" class="form-control" id="nombre" required />
-              </div>
-              <div class="col-md-4">
-                <label for="apellido" class="form-label">Apellido</label>
-                <input
-                  type="text"
-                  class="form-control"
-                  id="apellido"
-                  required
-                />
-              </div>
-              <div class="col-md-6">
-                <label for="especialidad" class="form-label"
-                  >Especialidad</label
+            <div class="sidebar-sticky">
+              <div class="sidebar-scroll px-3 pt-3">
+                <h6
+                  id="tituloPanel"
+                  class="text-uppercase text-body-secondary mb-3"
                 >
-                <input
-                  type="text"
-                  class="form-control"
-                  id="especialidad"
-                  required
-                />
-              </div>
-              <div class="col-md-6">
-                <label for="obraSocial" class="form-label"
-                  >Obras Sociales (separar con comas)</label
+                  Panel
+                </h6>
+                <ul
+                  class="nav nav-pills flex-column gap-1"
+                  aria-labelledby="tituloPanel"
                 >
-                <input type="text" class="form-control" id="obraSocial" />
-              </div>
-              <div class="col-md-3">
-                <label for="valorConsulta" class="form-label"
-                  >Valor Consulta ($)</label
-                >
-
-                <input
-                  type="number"
-                  class="form-control"
-                  id="valorConsulta"
-                  min="1"
-                  step="1"
-                  required
-                />
-              </div>
-              <div class="col-md-9">
-                <label for="descripcion" class="form-label"
-                  >Descripción/Bio</label
-                >
-                <textarea
-                  class="form-control"
-                  id="descripcion"
-                  rows="2"
-                ></textarea>
+                  <li class="nav-item">
+                    <a class="nav-link active" href="admin-medicos.html">
+                      <i class="bi bi-person-vcard me-2"></i>Médicos
+                    </a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="admin-especialidades.html">
+                      <i class="bi bi-hospital me-2"></i>Especialidades
+                    </a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="admin-obras-sociales.html">
+                      <i class="bi bi-shield-plus me-2"></i>Obras sociales
+                    </a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="admin-turnos.html">
+                      <i class="bi bi-calendar-check me-2"></i>Turnos y reservas
+                    </a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="usuarios.html">
+                      <i class="bi bi-people me-2"></i>Usuarios
+                    </a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="index.html">
+                      <i class="bi bi-box-arrow-up-right me-2"></i>Ver sitio
+                    </a>
+                  </li>
+                </ul>
               </div>
             </div>
+          </nav>
 
-            <div class="mt-4 d-flex justify-content-end">
-              <button
-                type="button"
-                class="btn btn-secondary me-2"
-                id="btnCancelarEdicion"
-                style="display: none"
-              >
-                Cancelar Edición
-              </button>
-              <button
-                type="submit"
-                class="btn btn-success"
-                id="btnGuardarMedico"
-              >
-                Guardar Médico
-              </button>
+          <!-- Contenido principal -->
+          <main class="col-12 col-md-9 col-lg-10 p-3">
+            <!-- ======================== FORMULARIO ======================== -->
+            <div class="container-fluid mt-2 mt-md-0">
+              <h1 class="mb-4 text-center">
+                Gestión de Profesionales Médicos 🩺
+              </h1>
+              <hr />
+
+              <div class="card shadow mb-5">
+                <div class="card-header bg-primary text-white">
+                  <h3 id="tituloFormulario" class="m-0">
+                    Agregar Nuevo Médico
+                  </h3>
+                </div>
+                <div class="card-body">
+                  <form id="formMedico">
+                    <input type="hidden" id="medicoId" value="" />
+
+                    <div class="row g-3">
+                      <div class="col-md-4">
+                        <label for="matricula" class="form-label fw-bold"
+                          >Matrícula</label
+                        >
+                        <input
+                          type="text"
+                          class="form-control"
+                          id="matricula"
+                          required
+                        />
+                      </div>
+
+                      <div class="col-md-4">
+                        <label for="nombre" class="form-label fw-bold"
+                          >Nombre</label
+                        >
+                        <input
+                          type="text"
+                          class="form-control"
+                          id="nombre"
+                          required
+                        />
+                      </div>
+                      <div class="col-md-4">
+                        <label for="apellido" class="form-label fw-bold"
+                          >Apellido</label
+                        >
+                        <input
+                          type="text"
+                          class="form-control"
+                          id="apellido"
+                          required
+                        />
+                      </div>
+                      <div class="col-md-4">
+                        <label for="especialidad" class="form-label fw-bold"
+                          >Especialidad</label
+                        >
+                        <select class="form-select" id="especialidad" required>
+                          <option value="">Seleccionar</option>
+                        </select>
+                      </div>
+
+                      <div class="col-md-4">
+                        <label for="valorConsulta" class="form-label fw-bold"
+                          >Valor Consulta ($)</label
+                        >
+                        <input
+                          type="number"
+                          class="form-control"
+                          id="valorConsulta"
+                          min="1"
+                          step="1"
+                          required
+                        />
+                      </div>
+
+                      <div class="col-md-4">
+                        <label class="form-label fw-bold">Obras Sociales</label>
+                        <div
+                          id="obraSocialContainer"
+                          class="d-flex flex-wrap gap-2"
+                        ></div>
+                      </div>
+
+                      <div class="col-md-4">
+                        <label for="fotoMedico" class="form-label fw-bold"
+                          >Foto del médico</label
+                        >
+                        <input
+                          type="file"
+                          class="form-control"
+                          id="fotoMedico"
+                          accept="image/*"
+                        />
+                      </div>
+
+                      <div class="col-md-9">
+                        <label for="descripcion" class="form-label fw-bold"
+                          >Descripción/Bio</label
+                        >
+                        <textarea
+                          class="form-control"
+                          id="descripcion"
+                          rows="2"
+                        ></textarea>
+                      </div>
+                    </div>
+
+                    <div class="mt-4 d-flex justify-content-end">
+                      <button
+                        type="button"
+                        class="btn btn-warning me-2"
+                        id="btnCancelarEdicion"
+                        style="display: none"
+                      >
+                        Cancelar Edición
+                      </button>
+                      <button
+                        type="submit"
+                        class="btn btn-success"
+                        id="btnGuardarMedico"
+                      >
+                        Guardar Médico
+                      </button>
+                    </div>
+                  </form>
+                </div>
+              </div>
+
+              <!-- ======= TABLA DE MÉDICOS ======= -->
+              <div class="card shadow">
+                <div class="card-header bg-success text-white">
+                  <h4 class="m-0">Listado de Médicos</h4>
+                </div>
+                <div class="card-body">
+                  <div class="table-responsive">
+                    <table
+                      id="tablaMedicos"
+                      class="table table-striped table-hover align-middle"
+                    >
+                      <thead>
+                        <tr>
+                          <th>Foto</th>
+                          <th>ID</th>
+                          <th>Nombre y Apellido</th>
+                          <th>Matrícula</th>
+                          <th>Especialidad</th>
+                          <th>Obras Sociales</th>
+                          <th>Honorarios</th>
+                          <th class="text-end">Acciones</th>
+                        </tr>
+                      </thead>
+                      <tbody></tbody>
+                    </table>
+                  </div>
+                </div>
+              </div>
             </div>
-          </form>
+          </main>
         </div>
       </div>
 
-      <!-- ======= TABLA DE MÉDICOS ======= -->
-      <div class="card shadow">
-        <div class="card-header bg-success text-white">
-          <h4 class="m-0">Listado de Médicos</h4>
+      <!-- Footer-->
+      <footer
+        class="mt-auto border-top py-3 text-center text-body-tertiary small"
+      >
+        <div class="container-fluid">
+          v1.0 · Proyecto académico (entrega final)
         </div>
-        <div class="card-body">
-          <div class="table-responsive">
-            <table class="table table-striped table-hover align-middle">
-              <thead>
-                <tr>
-                  <th>Foto</th>
-                  <th>ID</th>
-                  <th>Nombre y Apellido</th>
-                  <th>Matrícula</th>
-                  <th>Especialidad</th>
-                  <th>Obras Sociales</th>
-                  <th>Honorarios</th>
-                  <th class="text-end">Acciones</th>
-                </tr>
-              </thead>
-              <tbody id="tablaMedicos"></tbody>
-            </table>
-          </div>
-        </div>
-      </div>
+      </footer>
+
+      <!-- BOOTSTRAP JS -->
+      <script src="js/bootstrap.bundle.min.js" defer></script>
+
+      <script type="module" src="js/admin-medicos.js"></script>
     </div>
-
-    <!-- ======================== FOOTER ======================== -->
-
-    <footer class="bg-primary text-white py-3 text-center mt-5">
-      <div class="container">
-        <div class="row gy-3 align-items-center">
-          <div class="col-12">
-            <p class="m-0 fw-bold small">
-              © 2025 IDW S.A. · Proyecto académico (tercera entrega)
-            </p>
-          </div>
-
-          <div class="col-12">
-            <nav
-              class="d-flex align-items-center gap-3 flex-wrap justify-content-center"
-            >
-              <a
-                class="text-white fw-bold text-decoration-none d-inline-flex align-items-center gap-2"
-                href="https://www.facebook.com/"
-                target="_blank"
-                rel="noopener"
-              >
-                <img src="img/facebook.png" alt="Facebook" class="icono-20" />
-                <span>Facebook</span>
-              </a>
-              <a
-                class="text-white fw-bold text-decoration-none d-inline-flex align-items-center gap-2"
-                href="https://www.instagram.com/"
-                target="_blank"
-                rel="noopener"
-              >
-                <img src="img/instagram.png" alt="Instagram" class="icono-20" />
-                <span>Instagram</span>
-              </a>
-              <a
-                class="text-white fw-bold text-decoration-none d-inline-flex align-items-center gap-2"
-                href="https://www.linkedin.com/"
-                target="_blank"
-                rel="noopener"
-              >
-                <img src="img/linkedin.png" alt="LinkedIn" class="icono-20" />
-                <span>LinkedIn</span>
-              </a>
-            </nav>
-          </div>
-        </div>
-      </div>
-    </footer>
-
-    <!-- BOOTSTRAP JS -->
-    <script src="js/bootstrap.bundle.min.js" defer></script>
-
-    <script type="module" src="js/admin-medicos.js"></script>
   </body>
 </html>
