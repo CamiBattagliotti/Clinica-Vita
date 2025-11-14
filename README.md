@@ -7,6 +7,10 @@ Repositorio del Proyecto "CLINICA VITA"
 -------------------------------------------------------------
 Github: https://github.com/abrilbarros/IDW_11
 -------------------------------------------------------------
+Link del Video
+-------------------------------------------------------------
+https://drive.google.com/file/d/1XYNw4FDUuo6ZsPuizo2OrTdguBvsT1n4/view?usp=drive_link
+-------------------------------------------------------------
 
 ## Credenciales de prueba
 
