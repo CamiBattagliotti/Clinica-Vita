@@ -18,6 +18,7 @@
 
     <!-- estilos del proyecto -->
     <link rel="stylesheet" href="css/styles.css" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
 </head>
 
 <body data-page="faq" class="d-flex flex-column min-vh-100">
@@ -44,11 +45,36 @@
             <!-- menú en desktop -->
             <ul class="navbar-nav ms-auto d-none d-lg-flex align-items-lg-center gap-lg-3 m-0">
                 <li class="nav-item"><a class="nav-link text-primary" href="index.html">Home</a></li>
+                <li id="turnosDesk" class="nav-item"><a class="nav-link text-primary" href="sacar-turno.html">Turnos</a></li>
                 <li class="nav-item"><a class="nav-link text-primary" href="institucional.html">Institucional</a>
                 </li>
                 <li class="nav-item"><a class="nav-link text-primary" href="contacto.html">Contacto</a></li>
                 <li class="nav-item"><a class="nav-link active fw-semibold text-success" href="faq.html"
                         aria-current="page">FAQ</a>
+                </li>
+                <!-- menú usuario logueado -->
+                <li class="dropdown d-none" id="menuUsuario">
+                    <a class="nav-link dropdown-toggle d-flex align-items-center" href="#" role="button"
+                        data-bs-toggle="dropdown" aria-expanded="false">
+                        <i class="bi bi-person-circle text-primary fs-5 me-2"></i>
+                        <span id="nombreUsuario"></span>
+                    </a>
+
+                    <ul class="dropdown-menu dropdown-menu-end">
+                        <li id="adminMed" class="d-none">
+                            <a class="dropdown-item" href="admin-medicos.html">
+                                <i class="bi bi-gear fs-6 text-black"></i> Panel Admin</a>
+                        </li>
+                        <li id="turnosDropdown" class="">
+                            <a class="dropdown-item" href="sacar-turno.html">
+                                <i class="bi bi-calendar-event text-black"></i> Turnos</a>
+                        </li>
+                        <li id="btnCierre">
+                            <a class="dropdown-item" style="cursor: pointer;">
+                                <i class="bi bi-box-arrow-right fs-6 text-danger"></i> Cerrar sesión
+                            </a>
+                        </li>
+                    </ul>
                 </li>
             </ul>
         </div>
@@ -62,11 +88,18 @@
         </div>
         <div class="offcanvas-body">
             <ul class="navbar-nav">
-                <li class="nav-item"><a class="nav-link text-primary" href="index.html">Home</a></li>
-                <li class="nav-item"><a class="nav-link text-primary" href="institucional.html">Institucional</a></li>
-                <li class="nav-item"><a class="nav-link text-primary" href="contacto.html">Contacto</a></li>
-                <li class="nav-item"><a class="nav-link active fw-semibold text-success" href="faq.html"
-                        aria-current="page">FAQ</a></li>
+                <li class="nav-item"><a class="nav-link text-primary" href="index.html">
+                    <i class="bi bi-house"></i> Home</a></li>
+                <li id="btnTurnosMob" class="nav-item"><a class="nav-link text-primary" href="sacar-turno.html">
+                    <i class="bi bi-calendar2-event"></i> Turnos</a></li>
+                <li class="nav-item"><a class="nav-link text-primary" href="institucional.html">
+                    <i class="bi bi-buildings"></i> Institucional</a></li>
+                <li class="nav-item"><a class="nav-link text-primary" href="contacto.html">
+                    <i class="bi bi-person-lines-fill"></i> Contacto</a></li>
+                <li class="nav-item"><a class="nav-link active fw-semibold text-success" href="faq.html" aria-current="page">
+                    <i class="bi bi-question-lg"></i> FAQ</a></li>
+                <li id="adminMedMob" class="nav-item d-none"><a class="nav-link text-primary" href="admin-medicos.html">
+                    <i class="bi bi-gear"></i> Panel Admin</a></li>
             </ul>
         </div>
     </div>
@@ -130,7 +163,7 @@
                                             <div>
                                                 <h4 class="h6 fw-bold text-primary mb-1">¿Dónde se encuentra la clínica?
                                                 </h4>
-                                                <p class="mb-0">Calle Cualquiera 1234, Concordia, Entre Ríos, Argentina.
+                                                <p class="mb-0">Calle Falsa 123, Concordia, Entre Ríos, Argentina.
                                                 </p>
                                             </div>
                                             <div>
@@ -161,17 +194,18 @@
                                                 <p class="mb-0">
                                                     Solicitá por WhatsApp, teléfono o web. También podés hacerlo ahora
                                                     mismo desde
-                                                    <a href="contacto.html"
-                                                        class="link-primary fw-semibold">Contacto</a>.
+                                                    <a href="sacar-turno.html"
+                                                        class="link-primary fw-semibold">Turnos</a>.
                                                 </p>
                                             </div>
                                             <div>
                                                 <h4 class="h6 fw-bold text-primary mb-1">¿Puedo reprogramar o cancelar
                                                     mi turno?</h4>
                                                 <p class="mb-0">
-                                                    Sí, idealmente con 24 horas de anticipación. Para gestionar cambios,
-                                                    escribinos por
-                                                    <a href="contacto.html"
+                                                    Sí, idealmente con 24 horas de anticipación. Podes autogestionarlo
+                                                    vos desde tu usuario en la sección de <a href="sacar-turno.html"
+                                                        class="link-primary fw-semibold">Turnos</a> o escribinos por <a
+                                                        href="contacto.html"
                                                         class="link-primary fw-semibold">Contacto</a>.
                                                 </p>
                                             </div>
@@ -180,8 +214,8 @@
                                                 </h4>
                                                 <p class="mb-0">
                                                     Para urgencias, sí. Para consultas, te recomendamos sacar turno en
-                                                    <a href="contacto.html"
-                                                        class="link-primary fw-semibold">Contacto</a>.
+                                                    <a href="sacar-turno.html"
+                                                        class="link-primary fw-semibold">Turnos</a>.
                                                 </p>
                                             </div>
                                         </div>
@@ -290,7 +324,7 @@
 
                         <!-- CTA final de turnos -->
                         <div class="text-center mt-4">
-                            <a href="contacto.html" class="btn btn-success fw-semibold">Reservar turno</a>
+                            <a href="sacar-turno.html" class="btn btn-success fw-semibold">Reservar turno</a>
                         </div>
                     </div>
                 </div>
@@ -303,7 +337,7 @@
         <div class="container">
             <div class="row gy-3 align-items-center">
                 <div class="col-12">
-                    <p class="m-0 fw-bold small">© 2025 IDW S.A. · Proyecto académico (tercera entrega)</p>
+                    <p class="m-0 fw-bold small">© 2025 IDW S.A. · Proyecto académico (entrega final)</p>
                 </div>
 
                 <div class="col-12">
@@ -333,6 +367,7 @@
 
     <!-- BOOTSTRAP JS -->
     <script src="js/bootstrap.bundle.min.js" defer></script>
+    <script src="js/navbar.js" type="module"></script>
 </body>
 
 </html>
