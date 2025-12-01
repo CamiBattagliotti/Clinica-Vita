@@ -2,15 +2,11 @@
 
 Aplicación web para la gestión de turnos médicos, desarrollada como Trabajo Final Integrador de Introducción al Desarrollo Web (UNER, 2025).
 
--------------------------------------------------------------
-Repositorio del Proyecto "CLINICA VITA"
--------------------------------------------------------------
-Github: https://github.com/abrilbarros/IDW_11
--------------------------------------------------------------
-Link del Video
--------------------------------------------------------------
-https://drive.google.com/file/d/1XYNw4FDUuo6ZsPuizo2OrTdguBvsT1n4/view?usp=drive_link
--------------------------------------------------------------
+---
+
+## Repositorio del Proyecto "CLINICA VITA"
+
+## Github: https://github.com/abrilbarros/IDW_11
 
 ## Credenciales de prueba
 
