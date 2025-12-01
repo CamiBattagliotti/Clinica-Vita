@@ -4,10 +4,6 @@ Aplicación web para la gestión de turnos médicos, desarrollada como Trabajo F
 
 ---
 
-## Repositorio del Proyecto "CLINICA VITA"
-
-## Github: https://github.com/abrilbarros/IDW_11
-
 ## Credenciales de prueba
 
 Para probar el login en la aplicación de la clínica, pueden usar las siguientes cuentas:
